@@ -74,7 +74,7 @@ password = args.password if args.password else ''
 if not password:
     bssid = get_bssid()
     if bssid:
-        password = bssid.replace(':', '').upper()
+        password = bssid.replace(':', '').upper().strip()
     else:
         password = DEFAULT_PASSWORD
 
