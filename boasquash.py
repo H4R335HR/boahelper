@@ -124,7 +124,7 @@ if response.ok:
                 error_message = error_match.group(1)
                 print(f'{error_message}')
             else:
-                print('Login attempt successful!')
+                print('Login attempt successful! Now try opening the router admin panel in your favorite browser')
         else:
             print('Error:', response.status_code)
     else:
