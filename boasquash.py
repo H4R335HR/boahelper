@@ -116,6 +116,17 @@ if response.ok:
         response = requests.post(f'http://{HOST}/boaform/admin/formLogin', data=formData)
         print('Status Code:', response.status_code)
         print('Status:', response.reason)
+        # Check if the request was successful
+        if response.status_code == 200:
+            # Check if the response content contains an error message
+            error_match = re.search(r'<h4>(.*?)</h4>', response.text)
+            if error_match:
+                error_message = error_match.group(1)
+                print(f'{error_message}')
+            else:
+                print('Login attempt successful!')
+        else:
+            print('Error:', response.status_code)
     else:
         print('Captcha value not found on /admin/login.asp')
 else:
