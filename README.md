@@ -5,6 +5,8 @@ Helper script for logging into certian routers with Boa httpd
 ## Description
 
 Run the script with proper arguments and you can open the router's admin page in any web browser to find yourself logged in.
+Tested with:
+Boa/0.93.15
 
 ## Usage
 
